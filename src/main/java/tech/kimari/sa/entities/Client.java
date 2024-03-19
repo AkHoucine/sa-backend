@@ -2,6 +2,8 @@ package tech.kimari.sa.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "CLIENT")
 public class Client {
@@ -13,18 +15,42 @@ public class Client {
     private String email;
     private String phone;
 
-    public Client(int id, String email, String phone) {
-        this.id = id;
-        this.email = email;
-        this.phone = phone;
-    }
+    private Date creating;
+
+    @Column(name = "UPDATING")
+    private Date updating;
 
     public Client() {
 
     }
+
+    public Client(int id, String email, String phone, Date creating, Date updating) {
+        this.id = id;
+        this.email = email;
+        this.phone = phone;
+        this.creating = creating;
+        this.updating = updating;
+    }
+
     public Client(int id, String email) {
         this.id = id;
         this.email = email;
+    }
+
+    public Date getCreating() {
+        return creating;
+    }
+
+    public void setCreating(Date creating) {
+        this.creating = creating;
+    }
+
+    public Date getUpdating() {
+        return updating;
+    }
+
+    public void setUpdating(Date updating) {
+        this.updating = updating;
     }
 
     public int getId() {
@@ -50,4 +76,6 @@ public class Client {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
 }

@@ -4,11 +4,13 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tech.kimari.sa.dto.ClientDTO;
 import tech.kimari.sa.dto.ErrorEntity;
 import tech.kimari.sa.entities.Client;
 import tech.kimari.sa.service.ClientService;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -30,7 +32,7 @@ public class ClientController {
     }
 
     @GetMapping(produces = APPLICATION_JSON_VALUE)
-    public List<Client> search(){
+    public Stream<ClientDTO> search(){
         return this.clientService.search();
     }
 
