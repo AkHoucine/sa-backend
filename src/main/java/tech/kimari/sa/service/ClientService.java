@@ -1,7 +1,6 @@
 package tech.kimari.sa.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tech.kimari.sa.entities.Client;
 import tech.kimari.sa.repository.ClientRepository;
