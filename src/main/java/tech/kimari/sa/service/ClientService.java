@@ -8,7 +8,6 @@ import tech.kimari.sa.mapper.ClientDTOMapper;
 import tech.kimari.sa.repository.ClientRepository;
 
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
